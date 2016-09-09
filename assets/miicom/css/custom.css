@@ -93,6 +93,7 @@
 .sidebar .nav-second-level li,
 .sidebar .nav-third-level li {
     border-bottom: 0!important;
+    background-color: beige;
 }
 
 

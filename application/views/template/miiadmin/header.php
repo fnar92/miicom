@@ -5,12 +5,12 @@
     <title>Miicom Internet</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Minimal Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-    Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <meta name="keywords" content="" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <link href="<?=base_url();?>assets/miicom/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
     <!-- Custom Theme files -->
     <link href="<?=base_url();?>assets/miicom/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?=base_url();?>assets/miicom/css/style_mii.css" rel='stylesheet' type='text/css' />
     <link href="<?=base_url();?>assets/miicom/css/font-awesome.css" rel="stylesheet"> 
     <link href="<?=base_url();?>assets/miicom/css/smartadmin-production-plugins.min.css" rel="stylesheet"> 
     
@@ -193,8 +193,8 @@
 					<li class="dropdown">
                                             <a href="#" class="dropdown-toggle dropdown-at" data-toggle="dropdown"><span class=" name-caret">{{ User.nombre}}<i class="caret"></i></span><img style="padding: 10px" width="50px" height="50px" src="<?=base_url();?>assets/img/avatar.png"></a>
 		              <ul class="dropdown-menu " role="menu">
-		                <li><a href="perfil"><i class="fa fa-user"></i>Editar perfil</a></li>
-		                <li><a href="logout"><i class="fa fa-clipboard"></i>Salir</a></li>
+		                <li><a href="<?= base_url('miiadmin/perfil')?>"><i class="fa fa-user"></i>Editar perfil</a></li>
+		                <li><a href="<?= base_url('miiadmin/logout')?>"><i class="fa fa-clipboard"></i>Salir</a></li>
 		              </ul>
 		            </li>
 		           
@@ -209,15 +209,15 @@
                 <ul class="nav" id="side-menu">
 				
                     <li>
-                        <a href="index" class=" hvr-bounce-to-right"><i class="fa fa-dashboard nav_icon "></i><span class="nav-label">Dashboard</span> </a>
+                        <a href="<?= base_url('miiadmin/index')?>" class=" hvr-bounce-to-right"><i class="fa fa-dashboard nav_icon "></i><span class="nav-label">Dashboard</span> </a>
                     </li>
                    
                     <li>
                         <a href="#" class=" hvr-bounce-to-right"><i class="fa fa-indent nav_icon"></i> <span class="nav-label">Clientes</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="clientes" class=" hvr-bounce-to-right"> <i class="fa fa-area-chart nav_icon"></i>Ver clientes</a></li>
+                            <li><a href="<?= base_url('miiadmin/clientes')?>" class=" hvr-bounce-to-right"> <i class="fa fa-area-chart nav_icon"></i>Ver clientes</a></li>
                             
-                            <li><a href="addCliente" class=" hvr-bounce-to-right"><i class="fa fa-map-marker nav_icon"></i>Nuevo cliente</a></li>
+                            <li><a href="<?= base_url('miiadmin/clientes/add')?>" class=" hvr-bounce-to-right"><i class="fa fa-map-marker nav_icon"></i>Nuevo cliente</a></li>
 			
 
 					   </ul>

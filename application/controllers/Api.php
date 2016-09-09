@@ -24,6 +24,25 @@ class Api extends CI_Controller {
         echo json_encode(array('data'=>$response));
     }
     
+    public function updateCliente() {
+        $this->is_ajax();
+        $data=$_POST=json_decode(file_get_contents('php://input'),true);
+        $data_s=$data['data'];
+        $id=$data_s['cid'];
+        unset($data_s['cid']);
+        $response=$this->cliente_model->updateCliente($id, $data_s);
+        echo json_encode(array('data'=>$response));
+    }
+    
+    public function createCliente() {
+        $this->is_ajax();
+        $data=$_POST=json_decode(file_get_contents('php://input'),true);
+        $data_s=$data['data'];
+        $data_s['ccreated']=  date('Y-m-d');
+        $response=$this->cliente_model->createCliente($data_s);
+        echo json_encode(array('data'=>$response));
+    }
+    
     public function getClientes() {
         echo json_encode($this->cliente_model->getAll());
     }
