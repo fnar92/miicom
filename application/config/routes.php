@@ -53,6 +53,7 @@ $route['sign-in'] = 'welcome/login';
 $route['sign-up'] = 'welcome/register';
 $route['logout'] = 'welcome/logout';
 
+$route['miiadmin/clientes/add'] = 'miiadmin/addCliente';
 
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';

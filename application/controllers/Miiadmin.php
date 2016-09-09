@@ -20,6 +20,10 @@ class Miiadmin extends CI_Controller {
         view('miiadmin/clientes_view', NULL);
     }
     
+    public function addCliente() {
+        view('miiadmin/clientesadd_view', NULL);
+    }
+    
     public function logout() {
         $this->session->sess_destroy();
         redirect();
