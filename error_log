@@ -1,0 +1,8 @@
+[10-Mar-2016 23:00:16 Etc/GMT] PHP Fatal error:  Call to undefined function base_url() in /home/hrwistoz/public_html/miicom.net/application/views/welcome/index.php on line 52
+[10-Mar-2016 23:00:42 Etc/GMT] PHP Fatal error:  Call to undefined function base_url() in /home/hrwistoz/public_html/miicom.net/application/views/welcome/index.php on line 52
+[10-Mar-2016 23:00:43 Etc/GMT] PHP Fatal error:  Call to undefined function base_url() in /home/hrwistoz/public_html/miicom.net/application/views/welcome/index.php on line 52
+[10-Mar-2016 23:00:45 Etc/GMT] PHP Fatal error:  Call to undefined function base_url() in /home/hrwistoz/public_html/miicom.net/application/views/welcome/index.php on line 52
+[11-Mar-2016 17:40:41 Etc/GMT] PHP Fatal error:  Call to undefined method CI_Session::destroy() in /home/hrwistoz/public_html/miicom.net/application/controllers/Welcome.php on line 70
+[07-Sep-2016 21:21:22 Etc/GMT] PHP Fatal error:  Call to undefined method Admin_model::get() in /home/hrwistoz/public_html/miicom.net/application/controllers/Api.php on line 13
+[07-Sep-2016 21:25:16 Etc/GMT] PHP Fatal error:  Call to undefined method CI_Session::user_data() in /home/hrwistoz/public_html/miicom.net/application/controllers/Api.php on line 25
+[08-Sep-2016 16:28:10 Etc/GMT] PHP Fatal error:  Can't use method return value in write context in /home/hrwistoz/public_html/miicom.net/application/controllers/Api.php on line 19
