@@ -1,5 +1,5 @@
 var app = angular.module("myApp", ['ngRoute','ngResource']);
-var route="http://localhost:8181/miicomgit/";
+var route="http://localhost:90/miicomgit/";
 
 app.config(function($routeProvider){
     	  /*$routeProvider

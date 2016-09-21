@@ -36,9 +36,11 @@ app.controller('mainController', ['$scope', '$http', function($scope, $http) {
     
 }]);
 
-app.controller('clientesController', ['$scope', '$http', 'listaClientes', function($scope, $http, listaClientes) {
+app.controller('clientesController', ['$scope', '$http', 'listaClientes', 'pagosCliente', function($scope, $http, listaClientes, pagosCliente) {
     $scope.cliente=[];
     $scope.clientes=[];
+    $scope.pagosCliente=[];
+    
     getClientes();
    
     function getClientes(){
@@ -46,10 +48,11 @@ app.controller('clientesController', ['$scope', '$http', 'listaClientes', functi
         $scope.clientes=data;
         });
     }
+    
             
     $scope.viewCliente=function(cliente){
         $scope.cliente=cliente;
-        $("#cliente_id").html($scope.cliente.cid);
+        $(".cliente_id").html($scope.cliente.cid);
         $("#cnombre").val($scope.cliente.cnombre);
         $("#cemail").val($scope.cliente.cemail);
         $("#ctelefono").val($scope.cliente.ctelefono);
@@ -116,6 +119,19 @@ app.controller('clientesController', ['$scope', '$http', 'listaClientes', functi
         });
     };
     
+    $scope.viewPagos=function(cliente){
+        $scope.cliente=cliente;
+        
+        pagosCliente.query({idCliente:cliente.cid}, function (data) {
+        $scope.pagosCliente=data;
+        });
+        
+        $(".cliente_id").html($scope.cliente.cid);
+        $(".cliente_name").html($scope.cliente.cnombre);
+        
+        $("#modalPagos").modal('show');
+    };
+    
    
 }]);
 
@@ -123,6 +139,22 @@ app.controller('clientesController', ['$scope', '$http', 'listaClientes', functi
 app.factory("listaClientes", function ($resource) {
     return $resource(route + "api/getClientes", {isArray: true});
 });
+
+app.factory("pagosCliente", function ($resource) {
+    return $resource(route + "api/getPagosCliente/:idCliente", {idCliente: '@idCliente'});
+});
+
 app.factory("clienteById", function ($resource) {
     return $resource(route + "api/getClienteById/:idCliente", {idCliente: '@idCliente'});
+});
+app.filter('estatus', function () {
+    return function (x, item, estatus) {
+        if(item.estatus==1){
+            return '<span id="etiqueta" class="label label-success">OK</span>';
+        }else{
+            return '<span id="etiqueta" class="label label-danger">ADEUDO</span>';
+        }
+        /*item.estatusDesc = estatus[x - 1].descripcion;
+        return item.estatusDesc;*/
+    };
 });
