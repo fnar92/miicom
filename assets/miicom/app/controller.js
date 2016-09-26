@@ -93,6 +93,10 @@ app.controller('clientesController', ['$scope', '$http', 'listaClientes', 'pagos
     };
     
     $scope.createCliente=function(object){
+        if($("#cnombre").val()==""){
+                flashErrorMessage("Alta cliente", "Completa todos los campos", 2000);
+                return;
+        }
         var data=JSON.stringify({
             data:{
                 cnombre: $("#cnombre").val(),
@@ -133,8 +137,52 @@ app.controller('clientesController', ['$scope', '$http', 'listaClientes', 'pagos
     };
     
    
+   
 }]);
 
+app.controller('pagosController', ['$scope', '$http', 'listaClientes', function($scope, $http, listaClientes) {
+        $scope.pagosCliente=[];
+        $scope.clientes=[];
+        
+        listaClientes.query({}, function (data) {
+            $scope.clientes=data;
+        });
+        
+        $http({
+            url: route + 'api/getPagosAll',
+            method: "GET"
+        }).success(function (data) {
+            $scope.pagosCliente=data;
+        }).error(function (data) {
+            console.log(data);
+        });
+        
+        $scope.createPago=function(object){
+            if($("#cid").val()==""){
+                    flashErrorMessage("Alta pago", "Seleccione un cliente", 2000);
+                    return;
+            }
+            var data=JSON.stringify({
+                data:{
+                    cid: $("#cid").val(),
+                    pcantidad: $("#pcantidad").val(),
+                    pconcepto: $("#pconcepto").val()
+                },
+                user: null
+            });
+            $http({
+                url: route + 'api/createPago',
+                method: "POST",
+                data: data,
+                headers: {'Content-Type': 'application/json'}
+            }).success(function (data) {
+                $("#btn_Add").attr('disabled', true);
+                flashSuccessMessage("Pago cliente", "Se registro el pago exitosamente", 2000);
+            }).error(function (data) {
+                console.log(data);
+            });
+        };
+}]);
 
 app.factory("listaClientes", function ($resource) {
     return $resource(route + "api/getClientes", {isArray: true});

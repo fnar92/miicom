@@ -222,7 +222,18 @@
 
 					   </ul>
                     </li>
-					 <li>
+                    
+                    <li>
+                        <a href="#" class=" hvr-bounce-to-right"><i class="fa fa-indent nav_icon"></i> <span class="nav-label">Pagos</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="<?= base_url('miiadmin/pagos')?>" class=" hvr-bounce-to-right"> <i class="fa fa-area-chart nav_icon"></i>Ver pagos</a></li>
+                            
+                            <li><a href="<?= base_url('miiadmin/pagos/add')?>" class=" hvr-bounce-to-right"><i class="fa fa-map-marker nav_icon"></i>Registrar pago </a></li>
+			
+
+					   </ul>
+                    </li>
+<!--					 <li>
                         <a href="inbox" class=" hvr-bounce-to-right"><i class="fa fa-inbox nav_icon"></i> <span class="nav-label">Inbox</span> </a>
                     </li>
                     
@@ -255,7 +266,7 @@
                             <li><a href="signin.html" class=" hvr-bounce-to-right"><i class="fa fa-sign-in nav_icon"></i>Signin</a></li>
                             <li><a href="signup.html" class=" hvr-bounce-to-right"><i class="fa fa-sign-in nav_icon"></i>Singup</a></li>
                         </ul>
-                    </li>
+                    </li>-->
                 </ul>
             </div>
 			</div>

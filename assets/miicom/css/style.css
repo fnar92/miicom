@@ -346,8 +346,8 @@ a.dropdown-toggle.dropdown-at {
 .content-main {
     background-color: #F3F3F4;
     padding-top: 1em;
-    overflow-y: hidden;
-    overflow: auto;
+    /*overflow-y: hidden;
+    overflow: auto;*/
     /*height: 650px;*/
 }
 .navbar-right-left{
@@ -1139,7 +1139,7 @@ i.fa.fa-twitter {
     padding-top: 10px;
     padding-bottom: 10px;
     border: 1px solid rgb(234, 234, 234);
-     background: #F3F3F4;
+     background: beige;
 }
 .grid-hor h2 {
     color: #000;

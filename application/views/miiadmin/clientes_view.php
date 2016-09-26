@@ -1,7 +1,7 @@
 
 <div class="banner">
     <h2>
-    <a href="index">Home</a>
+    <a href="<?= base_url('miiadmin/index')?>">Home</a>
     <i class="fa fa-angle-right"></i>
     <span>Clientes</span>
     </h2>
@@ -83,9 +83,9 @@
         <tr>
             <tr ng-repeat="pagos in pagosCliente">
             <td>{{pagos.pid}}</td>
-            <td>{{pagos.cantidad}}</td>
-            <td>{{pagos.concepto}}</td>
-            <td>{{pagos.fecha}}</td>
+            <td>{{pagos.pcantidad}}</td>
+            <td>{{pagos.pconcepto}}</td>
+            <td>{{pagos.pfecha}}</td>
         </tr>
     </tbody>
   </table>

@@ -24,6 +24,14 @@ class Miiadmin extends CI_Controller {
         view('miiadmin/clientesadd_view', NULL);
     }
     
+    public function pagos() {
+        view('miiadmin/pagos_view', NULL);
+    }
+    
+    public function addPago() {
+        view('miiadmin/pagosadd_view', NULL);
+    }
+    
     public function logout() {
         $this->session->sess_destroy();
         redirect();
