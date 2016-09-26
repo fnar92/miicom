@@ -51,6 +51,30 @@ class Api extends CI_Controller {
         echo json_encode($this->cliente_model->getById($id));
     }
     
+    public function getPagosCliente($id) {
+        echo json_encode($this->cliente_model->getPagosCliente($id));
+    }
+    
+    public function getPagosAll() {
+        echo json_encode($this->cliente_model->getPagosAll());
+    }
+    
+    public function createPago() {
+        $data=$_POST=json_decode(file_get_contents('php://input'),true);
+        $data_s=$data['data'];
+        $data_s['pfecha']=  date('Y-m-d');
+        $response=$this->cliente_model->createPago($data_s);
+        echo json_encode(array('data'=>$response));
+    }
+    public function getAdeudosCliente($id) {
+        //echo json_encode($this->cliente_model->getAdeudosCliente($id));
+        $today=  date('Y-m-d');
+        $fecha_cliente='2016-08-23';
+        
+        echo $today;
+        
+    }
+    
     public function set() {
         $this->check();
         $this->idUser=$this->session->userdata('user_id');

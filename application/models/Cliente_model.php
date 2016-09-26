@@ -29,4 +29,26 @@ class Cliente_model extends CI_Model {
     public function createCliente($data_s) {
         return $this->db->insert('mii_cliente', $data_s);
     }
+    
+    public function getPagosCliente($id) {
+        $this->db->where('cid',$id);
+        return $this->db->get('mii_pago')->result();
+    }
+    
+    public function getPagosAll() {
+        $this->db->select('*');
+        $this->db->from('mii_pago');
+        $this->db->join('mii_cliente', 'mii_pago.cid = mii_cliente.cid');
+        $query = $this->db->get();
+        return $query->result();
+    }
+    
+    public function createPago($data_s) {
+        return $this->db->insert('mii_pago', $data_s);
+    }
+    
+    public function getAdeudosCliente($id) {
+        $this->db->where('cid',$id);
+        return $this->db->get('mii_pago')->result();
+    }
 }

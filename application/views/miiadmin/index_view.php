@@ -1,7 +1,7 @@
 
 <div class="banner">
     <h2>
-    <a href="index">Home</a>
+    <a href="<?= base_url('miiadmin/index')?>">Home</a>
     <i class="fa fa-angle-right"></i>
     <span>Dashboard</span>
     </h2>
